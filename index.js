@@ -1,10 +1,12 @@
+#!/usr/bin/env node
 "use strict";
+process.env.NODE_PATH = __dirname + "/../node_modules/";
 const program = require("commander");
 const exec = require("child_process").exec;
 const config = require("./template.json");
 
 program
-  .version("1.0.0", "-v, --version")
+  .version("1.0.2", "-v, --version")
   .command("create <app-name>")
   .description("create a new project powered by tb-vue-cli")
   .action(appName => {
